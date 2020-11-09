@@ -1,0 +1,86 @@
+[
+    {
+        "model": "bot.place",
+        "pk": 1,
+        "fields": {
+            "name": "De Buena Planta",
+            "address": "1118 Abbot Kinney Blvd, Venice, CA 90291",
+            "tag": "0",
+            "neighborhood": "Venice",
+            "instagram": "https://www.instagram.com/de_buena_planta/",
+            "open_time": "16:00",
+            "close_time": "21:45"
+
+        }
+    },
+    {
+        "model": "bot.place",
+        "pk": 2,
+        "fields": {
+            "name": "Valle Venice",
+            "address": "1305 Abbot Kinney Blvd, Venice, CA 90291",
+            "tag": "0",
+            "neighborhood": "Venice",
+            "instagram": "https://www.instagram.com/valle.venice/",
+            "open_time": "17:00",
+            "close_time": "23:00"
+
+        }
+    },
+    {
+        "model": "bot.place",
+        "pk": 3,
+        "fields": {
+            "name": "Bedroom 6",
+            "address": "501 Rose Ave, Venice, CA",
+            "tag": "1",
+            "neighborhood": "Venice",
+            "instagram": "https://www.instagram.com/bedroom_six/",
+            "open_time": "19:00",
+            "close_time": "23:00"
+        }
+    },
+    {
+        "model": "bot.place",
+        "pk": 4,
+        "fields": {
+            "name": "All Day Baby",
+            "address": "3200 Sunset Blvd, Los Angeles, CA 90026",
+            "tag": "0",
+            "neighborhood": "Silverlake",
+            "instagram": "https://www.instagram.com/alldaybabyla/",
+            "open_time": "9:00",
+            "close_time": "15:00"
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 5,
+        "fields": {
+            "name": "Helluva Time",
+            "address": "3200 Sunset Blvd, Los Angeles, CA 90026",
+            "tag": "0",
+            "neighborhood": "Silverlake",
+            "instagram": "https://www.instagram.com/helluvatimenow/",
+            "open_time": "17:00",
+            "close_time": "21:00"
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 6,
+        "fields": {
+            "name": "Yeastie boys bagels",
+            "address": "food truck that moves around",
+            "tag": "0",
+            "neighborhood": "Brentwood",
+            "instagram": "https://www.instagram.com/yeastieboysbagels/",
+            "open_time": "8:00",
+            "close_time": "14:00"
+        }
+
+    }
+    
+]
