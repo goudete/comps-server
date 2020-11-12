@@ -1,42 +1,77 @@
 from django.contrib.auth.models import User
-from django.shortcuts import render
-from rest_framework import viewsets, permissions, status
-from .serializers import UserSerializer, PlaceSerializer, UserSerializerWithToken
 from .models import Place
-from django.http import HttpResponseRedirect
-from django.contrib.auth.models import User
+
+from .serializers import UserSerializer, PlaceSerializer
+
+from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import viewsets, permissions, status
+from rest_framework import mixins
+from rest_framework import generics
+from rest_framework import authentication
+from rest_framework import exceptions
+from rest_framework.parsers import JSONParser
+import json
+
+
 
 # Create your views here.
-@api_view(['GET'])
-def current_user(request):
-    """
-    Determine the current user by their token, and return their data
-    """
-    
-    serializer = UserSerializer(request.user)
-    return Response(serializer.data)
+class UserRegistration(mixins.CreateModelMixin, generics.GenericAPIView):
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
+    parser_classes = [JSONParser]
 
-
-class UserList(APIView):
-    """
-    Create a new user. It's called 'UserList' because normally we'd have a get
-    method here too, for retrieving a list of all User objects.
-    """
-
-    permission_classes = (permissions.AllowAny,)
-
-    def post(self, request, format=None):
-        serializer = UserSerializerWithToken(data=request.data)
+    def create(self, request, *args, **kwargs):
+        serializer = self.serializer_class(data = request.data)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            user = serializer.save()
+            token, created = Token.objects.get_or_create(user=user)
+            return Response({
+                'token': token.key,
+                'id': user.id
+            })
+        else:
+            raise exceptions.AuthenticationFailed("Invalid Data, please check again")
 
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
 
-class PlaceViewSet(viewsets.ModelViewSet):
-  queryset = Place.objects.all()
-  serializer_class = PlaceSerializer
+class CustomAuthToken(APIView):
+    def post(self, request, *args, **kwargs):
+        username = request.data.get('username')
+        password = request.data.get('password')
+        if not username:
+            return None
+        try:
+            user = User.objects.get(username=username)
+        
+        except User.DoesNotExist:
+            raise exceptions.AuthenticationFailed("Password incorrect, please try again")
+
+        token, created = Token.objects.get_or_create(user=user)
+        return Response({
+            'token': token.key,
+            'id': user.id
+        })
+
+class CheckAuth(APIView):
+    def post(self, request, *args, **kwargs):
+        token = request.data.get('token')
+        try:
+            user = Token.objects.get(key=token)
+        except Token.DoesNotExist:
+            raise exceptions.AuthenticationFailed("invalid user information, please login/register")
+        
+        return Response({
+            "user": user.key
+        })
+
+# Figure out exactly how to write this function
+class GetAllPlaces(APIView):
+    def get(self, request, *args, **kwargs):
+        places = [places for places in Place.objects.all()]
+        return Response(places)
 
