@@ -2,20 +2,13 @@ from django.contrib.auth.models import User
 from .models import Place
 
 from .serializers import UserSerializer, PlaceSerializer
-
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import viewsets, permissions, status
-from rest_framework import mixins
-from rest_framework import generics
-from rest_framework import authentication
-from rest_framework import exceptions
 from rest_framework.parsers import JSONParser
+from rest_framework import viewsets, permissions, status, mixins, generics, authentication, exceptions
 import json
-
 
 
 # Create your views here.
@@ -73,5 +66,6 @@ class CheckAuth(APIView):
 class GetAllPlaces(APIView):
     def get(self, request, *args, **kwargs):
         places = [places for places in Place.objects.all()]
-        return Response(places)
+        serializer = PlaceSerializer(places, many=True)
+        return Response(serializer.data)
 
