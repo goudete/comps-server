@@ -4,6 +4,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from rest_framework.authtoken.models import Token
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 # Create your models here.
@@ -15,6 +16,11 @@ class Place(models.Model):
   instagram = models.CharField(max_length=255)
   open_time = models.TimeField(auto_now=False, auto_now_add=False)
   close_time = models.TimeField(auto_now=False, auto_now_add=False)
+
+class Ratings(models.Model):
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+  place = models.ForeignKey(Place, on_delete=models.CASCADE)
+  rating = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(5)])
 
 
 @receiver(post_save, sender=User)
