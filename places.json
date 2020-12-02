@@ -7,9 +7,7 @@
             "address": "1118 Abbot Kinney Blvd, Venice, CA 90291",
             "tag": "0",
             "neighborhood": "Venice",
-            "instagram": "https://www.instagram.com/de_buena_planta/",
-            "open_time": "16:00",
-            "close_time": "21:45"
+            "instagram": "https://www.instagram.com/de_buena_planta/"
 
         }
     },
@@ -21,9 +19,7 @@
             "address": "1305 Abbot Kinney Blvd, Venice, CA 90291",
             "tag": "0",
             "neighborhood": "Venice",
-            "instagram": "https://www.instagram.com/valle.venice/",
-            "open_time": "17:00",
-            "close_time": "23:00"
+            "instagram": "https://www.instagram.com/valle.venice/"
 
         }
     },
@@ -35,9 +31,7 @@
             "address": "501 Rose Ave, Venice, CA",
             "tag": "1",
             "neighborhood": "Venice",
-            "instagram": "https://www.instagram.com/bedroom_six/",
-            "open_time": "19:00",
-            "close_time": "23:00"
+            "instagram": "https://www.instagram.com/bedroom_six/"
         }
     },
     {
@@ -48,9 +42,7 @@
             "address": "3200 Sunset Blvd, Los Angeles, CA 90026",
             "tag": "0",
             "neighborhood": "Silverlake",
-            "instagram": "https://www.instagram.com/alldaybabyla/",
-            "open_time": "9:00",
-            "close_time": "15:00"
+            "instagram": "https://www.instagram.com/alldaybabyla/"
         }
 
     },
@@ -62,9 +54,8 @@
             "address": "3200 Sunset Blvd, Los Angeles, CA 90026",
             "tag": "0",
             "neighborhood": "Silverlake",
-            "instagram": "https://www.instagram.com/helluvatimenow/",
-            "open_time": "17:00",
-            "close_time": "21:00"
+            "instagram": "https://www.instagram.com/helluvatimenow/"
+
         }
 
     },
@@ -76,11 +67,574 @@
             "address": "food truck that moves around",
             "tag": "0",
             "neighborhood": "Brentwood",
-            "instagram": "https://www.instagram.com/yeastieboysbagels/",
-            "open_time": "8:00",
-            "close_time": "14:00"
+            "instagram": "https://www.instagram.com/yeastieboysbagels/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 7,
+        "fields": {
+            "name": "Courage Bagels",
+            "address": "777 N Virgil Ave, Los Angeles, CA 90029",
+            "tag": "0",
+            "neighborhood": "Silverlake",
+            "instagram": "https://www.instagram.com/courage_bagels/"
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 8,
+        "fields": {
+            "name": "The Tasting Kitchen",
+            "address": "1633 Abbot Kinney Blvd, Venice, CA 90291",
+            "tag": "0",
+            "neighborhood": "Venice",
+            "instagram": "https://www.instagram.com/the.tasting.kitchen/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 9,
+        "fields": {
+            "name": "Taqueria La Naranja",
+            "address": "2333 Daly St, Los Angeles, CA 90031",
+            "tag": "0",
+            "neighborhood": "Montecito Heights",
+            "instagram": "https://www.instagram.com/taquerialanaranja/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 10,
+        "fields": {
+            "name": "Newcomb's Ranch",
+            "address": "CA-2, La Cañada Flintridge, CA 91011",
+            "tag": "2",
+            "neighborhood": "Angeles National Forest",
+            "instagram": "https://www.instagram.com/newcombs__ranch/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 11,
+        "fields": {
+            "name": "Intelligentsia Coffee",
+            "address": "3922 Sunset Blvd, Los Angeles, CA 90029",
+            "tag": "1",
+            "neighborhood": "Silverlake",
+            "instagram": "https://www.instagram.com/intelligentsiacoffee/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 12,
+        "fields": {
+            "name": "Jon & Vinny's Fairfax",
+            "address": "412 N Fairfax Ave, Los Angeles, CA 90036",
+            "tag": "0",
+            "neighborhood": "Fairfax",
+            "instagram": "https://www.instagram.com/jonandvinnydelivery/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 13,
+        "fields": {
+            "name": "Petit Trois",
+            "address": "718 N Highland Ave, Los Angeles, CA 90038",
+            "tag": "0",
+            "neighborhood": "Hollywood",
+            "instagram": "https://www.instagram.com/petittroisla/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 14,
+        "fields": {
+            "name": "Regen Projects",
+            "address": "6750 Santa Monica Blvd, Los Angeles, CA 90038",
+            "tag": "2",
+            "neighborhood": "Hollywood",
+            "instagram": "https://www.instagram.com/regenprojects/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 15,
+        "fields": {
+            "name": "TENANTS OF THE TREES",
+            "address": "2810 Hyperion Ave, Los Angeles, CA 90027",
+            "tag": "1",
+            "neighborhood": "Silverlake",
+            "instagram": "https://www.instagram.com/tenantsofthetrees/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 16,
+        "fields": {
+            "name": "Death & Co.",
+            "address": "810 E 3rd St, Los Angeles, CA 90013",
+            "tag": "1",
+            "neighborhood": "Arts District",
+            "instagram": "https://www.instagram.com/deathandcompany/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 17,
+        "fields": {
+            "name": "APOTHEKE LA",
+            "address": "1746 N Spring St, Los Angeles, CA 90012",
+            "tag": "1",
+            "neighborhood": "Chinatown",
+            "instagram": "https://www.instagram.com/apothekela/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 18,
+        "fields": {
+            "name": "Angel City Brewery",
+            "address": "216 S Alameda St, Los Angeles, CA 90012",
+            "tag": "1",
+            "neighborhood": "Arts District",
+            "instagram": "https://www.instagram.com/angelcitybeer/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 19,
+        "fields": {
+            "name": "Everson Royce Bar",
+            "address": "1936 E 7th St, Los Angeles, CA 90021",
+            "tag": "1",
+            "neighborhood": "Arts District",
+            "instagram": "https://www.instagram.com/eversonroycebar/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 20,
+        "fields": {
+            "name": "In Sheep's Clothing",
+            "address": "710 E 4th Pl, Los Angeles, CA 90013",
+            "tag": "1",
+            "neighborhood": "Arts District",
+            "instagram": "https://www.instagram.com/insheepsclothinghifi/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 21,
+        "fields": {
+            "name": "Zebulon",
+            "address": "2478 Fletcher Dr, Los Angeles, CA 90039",
+            "tag": "1",
+            "neighborhood": "Frogtown",
+            "instagram": "https://www.instagram.com/zebulonla/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 22,
+        "fields": {
+            "name": "Mh Zh",
+            "address": "3536 Sunset Blvd, Los Angeles, CA 90026",
+            "tag": "0",
+            "neighborhood": "Silverlake",
+            "instagram": "https://www.instagram.com/mhzh.la/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 23,
+        "fields": {
+            "name": "Kumquat Coffee Co.",
+            "address": "4936 York Blvd, Los Angeles, CA 90042",
+            "tag": "1",
+            "neighborhood": "Highland Park",
+            "instagram": "https://www.instagram.com/kumquatcoffee/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 24,
+        "fields": {
+            "name": "endorffeine",
+            "address": "727 N Broadway Children's Stacks, Los Angeles, CA 90012",
+            "tag": "1",
+            "neighborhood": "Chinatown",
+            "instagram": "https://www.instagram.com/endorffeine/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 25,
+        "fields": {
+            "name": "KazuNori: The Original Hand Roll Bar",
+            "address": "421 S Main St, Los Angeles, CA 90013",
+            "tag": "0",
+            "neighborhood": "Downtown",
+            "instagram": "https://www.instagram.com/kazunorisushi/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 26,
+        "fields": {
+            "name": "Pizzanista!",
+            "address": "2019 E 7th St, Los Angeles, CA 90021",
+            "tag": "0",
+            "neighborhood": "Arts District",
+            "instagram": "https://www.instagram.com/pizzanista/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 27,
+        "fields": {
+            "name": "Maru Coffee",
+            "address": "1019 S Santa Fe Ave, Los Angeles, CA 90021",
+            "tag": "1",
+            "neighborhood": "Arts District",
+            "instagram": "https://www.instagram.com/marucoffeela/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 28,
+        "fields": {
+            "name": "Gagosian",
+            "address": "456 N Camden Dr, Beverly Hills, CA 90210",
+            "tag": "2",
+            "neighborhood": "Beverly Hills",
+            "instagram": "https://www.instagram.com/gagosian/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 29,
+        "fields": {
+            "name": "Manuela",
+            "address": "907 E 3rd St, Los Angeles, CA 90013",
+            "tag": "0",
+            "neighborhood": "Arts District"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 30,
+        "fields": {
+            "name": "Dover Street Market Los Angeles",
+            "address": "608 Imperial St, Los Angeles, CA 90021",
+            "tag": "2",
+            "neighborhood": "Arts District",
+            "instagram": "https://www.instagram.com/doverstreetmarketlosangeles/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 31,
+        "fields": {
+            "name": "Destroyer",
+            "address": "3578 Hayden Ave, Culver City, CA 90232",
+            "tag": "0",
+            "neighborhood": "Culver City",
+            "instagram": "https://www.instagram.com/destroyer.la/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 32,
+        "fields": {
+            "name": "Kayne Griffin Corcoran",
+            "address": "1201 South La Brea Ave, Los Angeles, CA 90019",
+            "tag": "2",
+            "neighborhood": "Central LA",
+            "instagram": "https://www.instagram.com/kaynegriffincorcoran/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 33,
+        "fields": {
+            "name": "Sqirl",
+            "address": "720 N Virgil Ave #4, Los Angeles, CA 90029",
+            "tag": "0",
+            "neighborhood": "Silverlake",
+            "instagram": "https://www.instagram.com/sqirlla/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 34,
+        "fields": {
+            "name": "ROW DTLA",
+            "address": "777 Alameda St, Los Angeles, CA 90021",
+            "tag": "2",
+            "neighborhood": "Downtown",
+            "instagram": "https://www.instagram.com/rowdtla/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 35,
+        "fields": {
+            "name": "Jeffrey Deitch",
+            "address": "925 N Orange Dr, Los Angeles, CA 90038",
+            "tag": "2",
+            "neighborhood": "Hollywood",
+            "instagram": "https://www.instagram.com/jeffreydeitchgallery/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 36,
+        "fields": {
+            "name": "The Butcher's Daughter",
+            "address": "1205 Abbot Kinney Blvd, Venice, CA 90291",
+            "tag": "0",
+            "neighborhood": "Venice",
+            "instagram": "https://www.instagram.com/thebutchersdaughter_official/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 37,
+        "fields": {
+            "name": "Bavel",
+            "address": "500 Mateo St, Los Angeles, CA 90013",
+            "tag": "0",
+            "neighborhood": "Arts District"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 38,
+        "fields": {
+            "name": "Cafe Gratitude",
+            "address": "512 Rose Ave, Venice, CA 90291",
+            "tag": "0",
+            "neighborhood": "Venice",
+            "instagram": "https://www.instagram.com/cafegratitude/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 39,
+        "fields": {
+            "name": "Felix Trattoria",
+            "address": "1023 Abbot Kinney Blvd, Venice, CA 90291",
+            "tag": "0",
+            "neighborhood": "Venice",
+            "instagram": "https://www.instagram.com/explore/locations/934256576665353/felix-trattoria/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 40,
+        "fields": {
+            "name": "Gjusta",
+            "address": "320 Sunset Ave, Venice, CA 90291",
+            "tag": "0",
+            "neighborhood": "Venice",
+            "instagram": "https://www.instagram.com/gjustabakery/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 41,
+        "fields": {
+            "name": "Gjelina",
+            "address": "1429 Abbot Kinney Blvd, Venice, CA 90291",
+            "tag": "0",
+            "neighborhood": "Venice",
+            "instagram": "https://www.instagram.com/gjelinarestaurant/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 42,
+        "fields": {
+            "name": "Alana's Coffee Roasters",
+            "address": "12511 Venice Blvd, Los Angeles, CA 90066",
+            "tag": "1",
+            "neighborhood": "Venice",
+            "instagram": "https://www.instagram.com/alanascoffee/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 43,
+        "fields": {
+            "name": "Hatchet Hall",
+            "address": "12517 W Washington Blvd, Los Angeles, CA 90066",
+            "tag": "0",
+            "neighborhood": "Mar Vista",
+            "instagram": "https://www.instagram.com/alanascoffee/"
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 44,
+        "fields": {
+            "name": "Gracias Madre",
+            "address": "8905 Melrose Ave, West Hollywood, CA 90069",
+            "tag": "0",
+            "neighborhood": "West Hollywood"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 45,
+        "fields": {
+            "name": "Great White",
+            "address": "1604 Pacific Ave, Venice, CA 90291",
+            "tag": "0",
+            "neighborhood": "Venice",
+            "instagram": "https://www.instagram.com/greatwhitevenice/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 46,
+        "fields": {
+            "name": "Eightfold Coffee",
+            "address": "1294 Sunset Blvd, Los Angeles, CA 90026",
+            "tag": "1",
+            "neighborhood": "Echo Park",
+            "instagram": "https://www.instagram.com/eightfoldcoffee/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 47,
+        "fields": {
+            "name": "Go Get Em Tiger",
+            "address": "10000 Washington Blvd Suite 103, Culver City, CA 90232",
+            "tag": "1",
+            "neighborhood": "Culver City",
+            "instagram": "https://www.instagram.com/ggetla/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 48,
+        "fields": {
+            "name": "G & B Coffee",
+            "address": "317 S Broadway C19, Los Angeles, CA 90013",
+            "tag": "1",
+            "neighborhood": "Culver City",
+            "instagram": "https://www.instagram.com/gandbcoffee/"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 49,
+        "fields": {
+            "name": "Venice Canals",
+            "address": "457 Carroll Canal, Venice, CA 90291",
+            "tag": "2",
+            "neighborhood": "Venice"
+
+        }
+
+    },
+    {
+        "model": "bot.place",
+        "pk": 50,
+        "fields": {
+            "name": "Saby's Cafe",
+            "address": "12900 Venice Blvd, Los Angeles, CA 90066",
+            "tag": "0",
+            "neighborhood": "Venice"
+
         }
 
     }
-    
 ]

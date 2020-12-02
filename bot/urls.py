@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import UserList, GetAllPlaces
+from .views import UserSignup, GetAllPlaces, UserLogin, Followers
 
 urlpatterns = [
     path('places/', GetAllPlaces.as_view()),
-    path('users/', UserList.as_view()),
-    #path('friendship/', friendship.urls)
+    path('users/', UserSignup.as_view()),
+    path('login/', UserLogin.as_view()),
+    path('follow/', Followers.as_view())
 ]
