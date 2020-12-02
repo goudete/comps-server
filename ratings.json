@@ -1,5 +1,4 @@
 [
-    ENRIQUE
     {
         "model": "bot.ratings",
         "pk": 1,
@@ -153,8 +152,6 @@
             "rating": 5
         }
     },
-
-    COFFEE-PURIST
     {
         "model": "bot.ratings",
         "pk": 18,
@@ -290,9 +287,6 @@
             "rating": 5
         }
     },
-
-
-    RESTAURANT-PURIST
     {
         "model": "bot.ratings",
         "pk": 33,
@@ -473,8 +467,6 @@
             "rating": 5
         }
     },
-
-    ART-PURIST
     {
         "model": "bot.ratings",
         "pk": 53,
@@ -547,8 +539,6 @@
             "rating": 5
         }
     },
-
-    COFFEE-RESTAURANT
     {
         "model": "bot.ratings",
         "pk": 61,
@@ -626,15 +616,6 @@
         "pk": 69,
         "fields": {
             "user": 5,
-            "place": 22,
-            "rating": 5
-        }
-    },
-    {
-        "model": "bot.ratings",
-        "pk": 69,
-        "fields": {
-            "user": 5,
             "place": 23,
             "rating": 5
         }
@@ -684,8 +665,6 @@
             "rating": 5
         }
     },
-
-    COFFEE-ART
     {
         "model": "bot.ratings",
         "pk": 75,
@@ -731,8 +710,6 @@
             "rating": 5
         }
     },
-
-    RESTAURANT-ART
     {
         "model": "bot.ratings",
         "pk": 80,
@@ -868,8 +845,6 @@
             "rating": 5
         }
     },
-
-    ALL-THREE
     {
         "model": "bot.ratings",
         "pk": 95,
@@ -978,8 +953,6 @@
             "rating": 4
         }
     },
-
-    MOTHER
     {
         "model": "bot.ratings",
         "pk": 107,
@@ -1088,8 +1061,6 @@
             "rating": 4
         }
     },
-
-    OREBITCH
     {
         "model": "bot.ratings",
         "pk": 119,
@@ -1161,6 +1132,6 @@
             "place": 50,
             "rating": 5
         }
-    },
+    }
 ]
 
