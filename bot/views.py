@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from friendship.models import Follow
 from django.contrib.auth import authenticate
-from .models import Place
+from .models import Place, Ratings
 from .serializers import UserSerializer, PlaceSerializer
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view
@@ -12,6 +12,7 @@ from rest_framework import viewsets, permissions, status, mixins, generics, auth
 from rest_framework.permissions import IsAuthenticated
 import json
 import googlemaps
+from recommender.recommend import Recommend
 
 
 class UserSignup(APIView):
@@ -131,3 +132,21 @@ class Followers(APIView):
             ]      
         }   
         '''
+class Recommender(APIView):
+   
+
+    def post(self, request, *args, **kwargs):
+        ratings = Ratings.objects.all()
+        ratings_data = []
+        for r in ratings:
+            ratings_data.append([r.user.id, r.place.id, r.rating])
+
+        #instantiating Recommend class
+        recommender = Recommend()
+
+        #plug in ratings_data & user_id
+        #will return arr of top place recommendations by id
+        recommender_res = recommender.get_user_recs(ratings_data, 9)
+        res = json.dumps(recommender_res)
+        #query place model & return to client
+        return Response({res})
