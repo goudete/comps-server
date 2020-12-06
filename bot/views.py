@@ -40,6 +40,7 @@ class UserSignup(APIView):
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
 
+
 class UserLogin(APIView):
     def post(self, request, *args, **kwargs):
         usrname = request.data.get('username')
@@ -132,8 +133,9 @@ class Followers(APIView):
             ]      
         }   
         '''
+
+
 class Recommender(APIView):
-   
 
     def post(self, request, *args, **kwargs):
         ratings = Ratings.objects.all()
@@ -144,9 +146,40 @@ class Recommender(APIView):
         #instantiating Recommend class
         recommender = Recommend()
 
-        #plug in ratings_data & user_id
-        #will return arr of top place recommendations by id
+        #plug in user_id
         recommender_res = recommender.get_user_recs(ratings_data, 9)
-        res = json.dumps(recommender_res)
-        #query place model & return to client
-        return Response({res})
+        response_dict = {}
+        recommendations = []
+        for rec in recommender_res:
+            place = Place.objects.get(id=rec)
+            name = place.name
+            address = place.address
+
+            recommendations.append({
+                'place_id': place.id, 
+                'name': place.name,
+                'address': place.address,
+                'tag': place.tag,
+                'neighborhood': place.neighborhood,
+                'instagram': place.instagram
+            })
+        response_dict['recommendations'] = recommendations
+
+        return Response(response_dict, status=status.HTTP_200_OK)
+
+
+        '''
+            Response object shape
+            {   
+            'recommendations': [
+                {
+                    'place_id': '<id>',
+                    'name': '<name>',
+                    'address': '<address>',
+                    'tag': '<tag>',
+                    'neighborhood': '<neighborhood>',
+                    'instagram': '<instagram>'
+                }
+            ]
+            }   
+        '''
