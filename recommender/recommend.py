@@ -1,5 +1,3 @@
-import pickle
-from rest_framework.response import Response
 from bot.models import Ratings
 import pandas as pd
 import numpy as np

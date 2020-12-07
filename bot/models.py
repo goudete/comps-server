@@ -14,6 +14,8 @@ class Place(models.Model):
   tag = models.IntegerField(validators=[MaxValueValidator(3)]) # 0: food, 1: drink, 2: other
   neighborhood = models.CharField(max_length = 255)
   instagram = models.CharField(max_length=255)
+  lat = models.DecimalField(max_digits=9, decimal_places=6, null=True)
+  lng = models.DecimalField(max_digits=9, decimal_places=6, null=True)
 
 class Ratings(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)

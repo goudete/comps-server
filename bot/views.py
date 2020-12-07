@@ -1,8 +1,8 @@
 from django.contrib.auth.models import User
 from friendship.models import Follow
 from django.contrib.auth import authenticate
-from .models import Place, Ratings
-from .serializers import UserSerializer, PlaceSerializer
+from .models import Place, Ratings, Lists
+from .serializers import UserSerializer, PlaceSerializer, ListSerializer
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -13,8 +13,9 @@ from rest_framework.permissions import IsAuthenticated
 import json
 import googlemaps
 from recommender.recommend import Recommend
+from utils.coordinates import Coordinates
 
-
+#Auth, signup endpoint
 class UserSignup(APIView):
     """
     Create a new user & retrieving a list of all User objects.
@@ -40,7 +41,7 @@ class UserSignup(APIView):
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
 
-
+#Auth, login endpoint
 class UserLogin(APIView):
     def post(self, request, *args, **kwargs):
         usrname = request.data.get('username')
@@ -59,18 +60,22 @@ class UserLogin(APIView):
 
 # This is working - leave for now
 class GetAllPlaces(APIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
     def get(self, request, *args, **kwargs):
         places = [places for places in Place.objects.all()]
         serializer = PlaceSerializer(places, many=True)
         return Response(serializer.data)
 
 
+# Social related endpoint
 class Followers(APIView):
     # Creates a follow relationship between two users
     def post(self, request, *args, **kwargs):
-        user = User.objects.get(id = request.data.get('user_id'))
-        other_user = User.objects.get(id = request.data.get('other_user_id'))
+        user_id = request.data.get('user_id') 
+        other_id = request.data.get('other_user_id')
+
+        user = User.objects.get(id = user_id)
+        other_user = User.objects.get(id = other_id)
         try:
             #Create follow relationship
             Follow.objects.add_follower(user, other_user)
@@ -80,7 +85,8 @@ class Followers(APIView):
 
     #Return a user's followers & following
     def get(self, request, *args, **kwargs):
-        user = User.objects.get(id = request.data.get('user_id'))
+        user_id = request.query_params['user_id']
+        user = User.objects.get(id = user_id)
         response_dict = {}
         followers_arr = []
         following_arr = []
@@ -134,10 +140,11 @@ class Followers(APIView):
         }   
         '''
 
-
+# Recommender algorithm related endpoint
 class Recommender(APIView):
 
     def post(self, request, *args, **kwargs):
+        user_id = request.data.get('user_id')
         ratings = Ratings.objects.all()
         ratings_data = []
         for r in ratings:
@@ -147,7 +154,7 @@ class Recommender(APIView):
         recommender = Recommend()
 
         #plug in user_id
-        recommender_res = recommender.get_user_recs(ratings_data, 9)
+        recommender_res = recommender.get_user_recs(ratings_data, int(user_id))
         response_dict = {}
         recommendations = []
         for rec in recommender_res:
@@ -183,3 +190,54 @@ class Recommender(APIView):
             ]
             }   
         '''
+
+
+class PlaceCoords(APIView):
+    """
+    This endpoint is to populate the lat,lng of all Place objects
+    """
+    def post(self, request, *args, **kwargs):
+        places = [places for places in Place.objects.all()]
+        coords = Coordinates()
+
+        coords.get_coords(places)
+        return Response('hola')
+
+
+class UserLists(APIView):
+    def post(self, request, *args, **kwargs):
+        name = request.data.get('name')
+        description = request.data.get('description')
+        places = request.data.get('places')
+        user_id = request.data.get('user_id')
+
+        print('PLACES:', places)
+
+        u = User.objects.get(id = user_id)
+        print('USER:', u)
+        l = Lists(user = u, name = name, description = description)
+        l.save()
+
+        for place in places:
+            print('place:', place)
+            p = Place.objects.filter(name__contains = place).first()
+            print('place object:', p)
+            l.place.add(p)
+        return Response(status=status.HTTP_201_CREATED)
+
+    def get(self, request, *args, **kwargs):
+        user_id = request.query_params['user_id']
+        u = User.objects.get(id = user_id)
+
+        lists = [l for l in Lists.objects.filter(user = u)]
+        serializer = ListSerializer(lists, many=True)
+        
+        return Response(serializer.data)
+
+
+class AllUserLists(APIView):
+    def get(self, request, *args, **kwargs):
+        lists = [l for l in Lists.objects.all()]
+        serializer = ListSerializer(lists, many=True)
+        
+        return Response(serializer.data)
